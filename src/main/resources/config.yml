@@ -1,0 +1,15 @@
+mysql:
+  user: username
+  port: 3306
+  password: password
+  host: localhost
+  database: database
+  tablePrefix: uc_
+disabledWorlds: [world1, world2, world3]
+maxPlayers: 10
+minPlayers: 4
+banksEnabled: false
+startingBalance: 0
+costCreate: 2500
+costExtend: 1500
+extensionTime: 7

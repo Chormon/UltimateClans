@@ -1,0 +1,17 @@
+name: UltimateClans
+description: WIP
+main: pl.chormon.ultimateclans.UltimateClans
+author: Chormon
+version: "${project.version}"
+depend: [WorldEdit, WorldGuard]
+softdepend: [iTag]
+commands:
+  klan:
+    description: List of UltimateClans commands
+permissions:
+  ultimateclans.admin:
+    description: Allows to use all UltimateClans commands
+    default: op
+  ultimateclans.use:
+    description: Allows to use basic UltimateClans commands
+    default: true
