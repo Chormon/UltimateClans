@@ -33,7 +33,7 @@ import pl.chormon.ultimateclans.commands.CmdUC;
 import pl.chormon.ultimateclans.entity.Clan;
 import pl.chormon.ultimateclans.entity.UCPlayer;
 import pl.chormon.ultimateclans.listeners.PlayerListener;
-import pl.chormon.ultimateclans.utils.MsgUtils;
+import pl.chormon.ultimatelib.utils.MsgUtils;
 
 /**
  *

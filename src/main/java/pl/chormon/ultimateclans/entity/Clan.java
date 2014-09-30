@@ -35,8 +35,8 @@ import org.bukkit.entity.Player;
 import pl.chormon.ultimateclans.Config;
 import pl.chormon.ultimateclans.Role;
 import pl.chormon.ultimateclans.UltimateClans;
-import pl.chormon.ultimateclans.utils.MsgUtils;
-import pl.chormon.ultimateclans.utils.StringUtils;
+import pl.chormon.ultimatelib.utils.MsgUtils;
+import pl.chormon.ultimatelib.utils.StringUtils;
 
 /**
  *

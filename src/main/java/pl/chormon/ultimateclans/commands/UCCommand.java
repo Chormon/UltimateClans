@@ -32,8 +32,8 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import pl.chormon.ultimateclans.Perm;
-import pl.chormon.ultimateclans.utils.MsgUtils;
-import pl.chormon.ultimateclans.utils.StringUtils;
+import pl.chormon.ultimatelib.utils.MsgUtils;
+import pl.chormon.ultimatelib.utils.StringUtils;
 
 /**
  *

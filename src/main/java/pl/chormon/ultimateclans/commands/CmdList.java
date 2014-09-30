@@ -29,7 +29,7 @@ import java.util.TreeSet;
 import org.bukkit.command.CommandSender;
 import pl.chormon.ultimateclans.Perm;
 import pl.chormon.ultimateclans.entity.Clan;
-import pl.chormon.ultimateclans.utils.MsgUtils;
+import pl.chormon.ultimatelib.utils.MsgUtils;
 
 /**
  *

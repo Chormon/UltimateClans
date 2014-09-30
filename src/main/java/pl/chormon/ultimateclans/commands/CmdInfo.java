@@ -23,13 +23,11 @@
  */
 package pl.chormon.ultimateclans.commands;
 
-import java.util.List;
-import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import pl.chormon.ultimateclans.Perm;
 import pl.chormon.ultimateclans.entity.Clan;
 import pl.chormon.ultimateclans.entity.UCPlayer;
-import pl.chormon.ultimateclans.utils.MsgUtils;
+import pl.chormon.ultimatelib.utils.MsgUtils;
 
 /**
  *
