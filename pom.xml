@@ -8,7 +8,7 @@
     <artifactId>UltimateClans</artifactId>
     <version>1.0.0</version>
     <url>http://chormon.pl</url>
-    <description></description>
+    <description>A clans managing plugin for Minecraft.</description>
 
     <!-- Build properties -->
     <properties>
