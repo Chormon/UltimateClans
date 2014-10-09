@@ -49,13 +49,16 @@ public class UltimateClans extends UltimateLib {
         pdf = this.getDescription();
         msgUtils = new MsgUtils("&e[UltimateClans]&r");
         msgUtils.setConsole(Bukkit.getConsoleSender());
-        Config.initConfig();        
+        Config.initConfig();
         clans = new ConcurrentHashMap<>();
         players = new ConcurrentHashMap<>();
         
-        getCommand("klan").setExecutor(new CmdUC());
+        // Commands
+        getCommand("wioska").setExecutor(new CmdUC());
 
+        // Events
         getServer().getPluginManager().registerEvents(new PlayerListener(this), this);
+        
         msgUtils.info("{name} {version} enabled!", "{name}", pdf.getName(), "{version}", pdf.getVersion());
     }
     
