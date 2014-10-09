@@ -25,7 +25,9 @@ package pl.chormon.ultimateclans.entity;
 
 import java.util.HashMap;
 import java.util.UUID;
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
+import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
@@ -43,6 +45,16 @@ public class UCPlayer implements Comparable<UCPlayer> {
     private final String name;
     private Clan clan = null;
     private Role role = Role.MEMBER;
+    private CommandSender sender = null;
+    private boolean senderInitialized = false;
+    
+    public CommandSender getSender() {
+        if(!senderInitialized) {
+            sender = Bukkit.getPlayer(uuid);
+            senderInitialized = true;
+        }
+        return sender;
+    }
 
     public UCPlayer(int ID, UUID uuid, String name) {
         this.ID = ID;
