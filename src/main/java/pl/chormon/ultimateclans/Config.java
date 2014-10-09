@@ -23,6 +23,7 @@
  */
 package pl.chormon.ultimateclans;
 
+import org.bukkit.Material;
 import org.bukkit.plugin.Plugin;
 
 /**
@@ -73,5 +74,32 @@ public class Config {
     
     public static String getColorEnemy() {
         return plugin.getConfig().getString("colorEnemy");
+    }
+    
+    public static int getWidth() {
+        return plugin.getConfig().getInt("width") - 1;
+    }
+    
+    public static int getLength() {
+        return plugin.getConfig().getInt("length") - 1;
+    }
+    
+    public static int getHeight() {
+        return plugin.getConfig().getInt("height");
+    }
+    
+    public static Material getVisualizationMaterialOne() {
+        Material mat = Material.getMaterial(plugin.getConfig().getString("visualizationMaterialOne").toUpperCase());
+        if(mat == null) return Material.GLASS;
+        return mat;
+    }
+    public static Material getVisualizationMaterialTwo() {
+        Material mat = Material.getMaterial(plugin.getConfig().getString("visualizationMaterialTwo").toUpperCase());
+        if(mat == null) return Material.GLOWSTONE;
+        return mat;
+    }
+    
+    public static boolean getVisualizeOnNonAirBlocks() {
+        return plugin.getConfig().getBoolean("visualizeOnNonAirBlocks");
     }
 }
