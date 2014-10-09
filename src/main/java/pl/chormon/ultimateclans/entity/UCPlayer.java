@@ -24,6 +24,7 @@
 package pl.chormon.ultimateclans.entity;
 
 import java.util.HashMap;
+import java.util.Random;
 import java.util.UUID;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -81,7 +82,10 @@ public class UCPlayer implements Comparable<UCPlayer> {
         }
         UCPlayer ucp = UltimateClans.get().getPlayer(player.getName());
         if (ucp == null) {
-            getPlayer(player.getUniqueId());
+            ucp = getPlayer(player.getUniqueId());
+        }
+        if(ucp == null) {
+            ucp = new UCPlayer(0, player.getUniqueId(), player.getName());
         }
         return ucp;
     }
