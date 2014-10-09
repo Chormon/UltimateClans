@@ -26,6 +26,7 @@ package pl.chormon.ultimateclans.commands;
 import java.util.List;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import pl.chormon.ultimateclans.UltimateClans;
 import pl.chormon.ultimateclans.entity.Clan;
 import pl.chormon.ultimateclans.entity.UCPlayer;
 import pl.chormon.ultimatelib.utils.MsgUtils;
@@ -77,7 +78,7 @@ public class CmdCreate extends UCCommand {
         try {
             Clan.create(player, tag, name);
         } catch (Exception ex) {
-            MsgUtils.error(ex.getMessage());
+            UltimateClans.get().error(ex.getMessage());
             MsgUtils.msg(sender, "&4Wystąpił błąd podczas tworzenia wioski. Jeśli to się powtórzy skontaktuj się z Administratorem serwera!");
             return;
         }

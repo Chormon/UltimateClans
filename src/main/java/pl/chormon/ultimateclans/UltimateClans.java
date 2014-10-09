@@ -26,23 +26,20 @@ package pl.chormon.ultimateclans;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import org.bukkit.Bukkit;
-import org.bukkit.plugin.Plugin;
-import org.bukkit.plugin.PluginDescriptionFile;
-import org.bukkit.plugin.java.JavaPlugin;
 import pl.chormon.ultimateclans.commands.CmdUC;
 import pl.chormon.ultimateclans.entity.Clan;
 import pl.chormon.ultimateclans.entity.UCPlayer;
 import pl.chormon.ultimateclans.listeners.PlayerListener;
+import pl.chormon.ultimatelib.UltimateLib;
 import pl.chormon.ultimatelib.utils.MsgUtils;
 
 /**
  *
  * @author Chormon
  */
-public class UltimateClans extends JavaPlugin {
+public class UltimateClans extends UltimateLib {
     
-    public static Plugin plugin;
-    private PluginDescriptionFile pdf;
+    private static UltimateClans plugin;
     private Map<String, Clan> clans;
     private Map<String, UCPlayer> players;
     
@@ -50,7 +47,8 @@ public class UltimateClans extends JavaPlugin {
     public void onEnable() {
         plugin = this;
         pdf = this.getDescription();
-        MsgUtils.setConsole(Bukkit.getConsoleSender());
+        msgUtils = new MsgUtils("&e[UltimateClans]&r");
+        msgUtils.setConsole(Bukkit.getConsoleSender());
         Config.initConfig();        
         clans = new ConcurrentHashMap<>();
         players = new ConcurrentHashMap<>();
@@ -58,12 +56,12 @@ public class UltimateClans extends JavaPlugin {
         getCommand("klan").setExecutor(new CmdUC());
 
         getServer().getPluginManager().registerEvents(new PlayerListener(this), this);
-        MsgUtils.info("{name} {version} enabled!", "{name}", pdf.getName(), "{version}", pdf.getVersion());
+        msgUtils.info("{name} {version} enabled!", "{name}", pdf.getName(), "{version}", pdf.getVersion());
     }
     
     @Override
     public void onDisable() {
-        MsgUtils.info("{name} {version} disabled!", "{name}", pdf.getName(), "{version}", pdf.getVersion());        
+        msgUtils.info("{name} {version} disabled!", "{name}", pdf.getName(), "{version}", pdf.getVersion());        
     }
     
     public static UltimateClans get() {
