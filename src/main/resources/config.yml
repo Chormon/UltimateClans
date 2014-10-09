@@ -6,6 +6,12 @@ mysql:
   database: database
   tablePrefix: uc_
 disabledWorlds: [world1, world2, world3]
+visualizationMaterialOne: GLASS
+visualizationMaterialTwo: GLOWSTONE
+visualizeOnNonAirBlocks: true
+width: 30
+length: 30
+height: 30
 maxPlayers: 10
 minPlayers: 4
 banksEnabled: false
