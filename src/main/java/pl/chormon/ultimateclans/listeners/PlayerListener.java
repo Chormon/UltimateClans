@@ -24,18 +24,21 @@
 package pl.chormon.ultimateclans.listeners;
 
 import java.util.SortedSet;
+import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.plugin.Plugin;
 import pl.chormon.ultimateclans.Config;
 import pl.chormon.ultimateclans.UltimateClans;
 import pl.chormon.ultimateclans.entity.Clan;
 import pl.chormon.ultimateclans.entity.UCPlayer;
+import pl.chormon.ultimateclans.utils.VisUtil;
 import pl.chormon.ultimatelib.utils.MsgUtils;
 
 /**
@@ -123,6 +126,31 @@ public class PlayerListener implements Listener {
             }
         }
 
+    }
+
+    @EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
+    public void onPlayerMoveClearVisualizations(PlayerMoveEvent event) {
+        if (isSameBlock(event)) {
+            return;
+        }
+        VisUtil.clear(event.getPlayer());
+    }
+
+    public static boolean isSameBlock(PlayerMoveEvent event) {
+        return isSameBlock(event.getFrom(), event.getTo());
+    }
+
+    public static boolean isSameBlock(Location one, Location two) {
+        if (one.getBlockX() != two.getBlockX()) {
+            return false;
+        }
+        if (one.getBlockZ() != two.getBlockZ()) {
+            return false;
+        }
+        if (one.getBlockY() != two.getBlockY()) {
+            return false;
+        }
+        return one.getWorld().equals(two.getWorld());
     }
 
 }
