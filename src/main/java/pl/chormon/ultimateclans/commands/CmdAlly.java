@@ -30,7 +30,11 @@ package pl.chormon.ultimateclans.commands;
 public class CmdAlly extends UCCommand {
 
     public CmdAlly() {
-        this.addAlias("ally");
+        this.addAlias("sojusz");
+        
+        this.setDesc("");
+        
+        this.addArg("wioska");
     }
     
 }

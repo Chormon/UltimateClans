@@ -27,6 +27,7 @@ import java.util.SortedSet;
 import java.util.TreeSet;
 import pl.chormon.ultimateclans.Perm;
 import pl.chormon.ultimateclans.entity.Clan;
+import pl.chormon.ultimatelib.commands.req.ReqIsPerm;
 import pl.chormon.ultimatelib.utils.MsgUtils;
 
 /**
@@ -42,7 +43,7 @@ public class CmdList extends UCCommand {
 
         this.addOptionalArg("strona", "1");
 
-        this.addPerm(Perm.LIST);
+        this.addReq(new ReqIsPerm(Perm.LIST.node));
     }
 
     @Override

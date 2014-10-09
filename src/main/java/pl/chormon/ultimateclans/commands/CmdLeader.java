@@ -29,4 +29,8 @@ package pl.chormon.ultimateclans.commands;
  */
 public class CmdLeader extends UCCommand {
     
+    public CmdLeader() {
+        this.addAlias("lider");
+    }
+    
 }

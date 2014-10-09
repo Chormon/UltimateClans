@@ -24,6 +24,7 @@
 package pl.chormon.ultimateclans.commands;
 
 import pl.chormon.ultimateclans.Perm;
+import pl.chormon.ultimatelib.commands.req.ReqIsPerm;
 
 /**
  *
@@ -41,13 +42,14 @@ public class CmdUC extends UCCommand {
     private final CmdAlly cmdAlly = new CmdAlly();
     private final CmdEnemy cmdEnemy = new CmdEnemy();
     private final CmdDisband cmdDisband = new CmdDisband();
+    private final CmdVisualize cmdVisualize = new CmdVisualize();
 
     public CmdUC() {
-        this.addAlias("klan");
+        this.addAlias("wioska");
 
         this.setDesc("Komendy pluginu UltimateClans");
         
-        this.addPerm(Perm.UC);
+        this.addReq(new ReqIsPerm(Perm.UC.node));
         
         this.addSubCommand(cmdList);
         this.addSubCommand(cmdCreate);
@@ -59,6 +61,7 @@ public class CmdUC extends UCCommand {
         this.addSubCommand(cmdAlly);
         this.addSubCommand(cmdEnemy);
         this.addSubCommand(cmdDisband);
+        this.addSubCommand(cmdVisualize);
     }
     
 }

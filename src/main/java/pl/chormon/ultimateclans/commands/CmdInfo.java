@@ -27,6 +27,7 @@ import org.bukkit.entity.Player;
 import pl.chormon.ultimateclans.Perm;
 import pl.chormon.ultimateclans.entity.Clan;
 import pl.chormon.ultimateclans.entity.UCPlayer;
+import pl.chormon.ultimatelib.commands.req.ReqIsPerm;
 import pl.chormon.ultimatelib.utils.MsgUtils;
 
 /**
@@ -42,7 +43,7 @@ public class CmdInfo extends UCCommand {
 
         this.addOptionalArg("wioska", "twoja");
         
-        this.addPerm(Perm.INFO);
+        this.addReq(new ReqIsPerm(Perm.INFO.node));
     }
 
     @Override

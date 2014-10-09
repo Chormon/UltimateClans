@@ -37,7 +37,9 @@ import pl.chormon.ultimatelib.utils.StringUtils;
 public class CmdTell extends UCCommand {
 
     public CmdTell() {
-        this.addAlias("tell");
+        this.addAlias("powiedz");
+        
+        this.setDesc("Wyślij wiadomość do członków wioski");
         
         this.addArg("wiadomość");
         

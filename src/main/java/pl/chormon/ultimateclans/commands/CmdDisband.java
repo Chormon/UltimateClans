@@ -28,5 +28,15 @@ package pl.chormon.ultimateclans.commands;
  * @author Chormon
  */
 public class CmdDisband extends UCCommand {
-    
+
+    public CmdDisband() {
+        this.addAlias("rozwiaz");
+
+        this.setDesc("Rozwiąż wioskę");
+    }
+
+    @Override
+    public void perform() {
+    }
+
 }

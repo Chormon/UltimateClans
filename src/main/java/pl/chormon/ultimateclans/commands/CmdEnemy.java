@@ -30,7 +30,11 @@ package pl.chormon.ultimateclans.commands;
 public class CmdEnemy extends UCCommand {
 
     public CmdEnemy() {
-        this.addAlias("enemy");
+        this.addAlias("wrog");
+        
+        this.addArg("wioska");
+        
+        this.setDesc("");
     }
     
 }

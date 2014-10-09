@@ -28,5 +28,17 @@ package pl.chormon.ultimateclans.commands;
  * @author Chormon
  */
 public class CmdInvite extends UCCommand {
-    
+
+    public CmdInvite() {
+        this.addAlias("zapros");
+
+        this.setDesc("Zaproś/usuń zaproszenia gracza do wioski");
+
+        this.addArg("gracz");
+    }
+
+    @Override
+    public void perform() {
+    }
+
 }

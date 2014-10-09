@@ -23,8 +23,6 @@
  */
 package pl.chormon.ultimateclans.commands;
 
-import java.util.List;
-import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import pl.chormon.ultimateclans.entity.Clan;
 import pl.chormon.ultimateclans.entity.UCPlayer;
@@ -47,8 +45,7 @@ public class CmdBoard extends UCCommand {
     }
 
     @Override
-    public void perform(CommandSender sender, String label, List<String> args) {
-
+    public void perform() {
         UCPlayer player = UCPlayer.getPlayer((Player)sender);
         if (player == null) {
             return;
@@ -63,8 +60,7 @@ public class CmdBoard extends UCCommand {
         for (String msg : clan.getBoard()) {
             MsgUtils.msg(sender, "{lp}. {msg}", "{lp}", i, "{msg}", msg);
         }
-
-        super.perform(sender, label, args);
+        super.perform();
     }
 
 }

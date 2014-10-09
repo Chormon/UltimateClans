@@ -24,7 +24,6 @@
 package pl.chormon.ultimateclans.commands;
 
 import java.util.List;
-import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import pl.chormon.ultimateclans.UltimateClans;
 import pl.chormon.ultimateclans.entity.Clan;
@@ -41,7 +40,7 @@ public class CmdCreate extends UCCommand {
     public CmdCreate() {
         this.addAlias("stworz");
 
-        this.setDesc("");
+        this.setDesc("Stwórz nową wioskę");
 
         this.addArg("tag");
 
@@ -51,8 +50,8 @@ public class CmdCreate extends UCCommand {
     }
 
     @Override
-    public void perform(CommandSender sender, String label, List<String> args) {
-        if (!(sender instanceof Player)) {
+    public void perform() {
+        if (senderIsConsole) {
             MsgUtils.msg(sender, "&cMusisz być graczem, żeby wykonać tą komendę!");
             return;
         }
