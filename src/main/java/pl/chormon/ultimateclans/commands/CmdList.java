@@ -23,10 +23,8 @@
  */
 package pl.chormon.ultimateclans.commands;
 
-import java.util.List;
 import java.util.SortedSet;
 import java.util.TreeSet;
-import org.bukkit.command.CommandSender;
 import pl.chormon.ultimateclans.Perm;
 import pl.chormon.ultimateclans.entity.Clan;
 import pl.chormon.ultimatelib.utils.MsgUtils;
@@ -41,33 +39,33 @@ public class CmdList extends UCCommand {
         this.addAlias("lista");
 
         this.setDesc("Lista wiosek");
-        
+
         this.addOptionalArg("strona", "1");
-        
+
         this.addPerm(Perm.LIST);
     }
 
     @Override
-    public void perform(CommandSender sender, String label, List<String> args) {
+    public void perform() {
         int page = 1;
-        try {
-            page = Integer.parseInt(args.get(0));
-        } catch (NumberFormatException ex) {
-            return;
+        if (args.size() > 0) {
+            try {
+                page = Integer.parseInt(args.get(0));
+            } catch (NumberFormatException ex) {
+                return;
+            }
         }
         SortedSet<Clan> clans = new TreeSet<>();
         clans.addAll(Clan.getClans(page));
-        
+
         MsgUtils.msg(sender, "Lista Wiosek:");
-        if(clans.isEmpty()) {
+        if (clans.isEmpty()) {
             MsgUtils.msg(sender, "---BRAK---");
             return;
         }
-        for(Clan clan : clans) {
+        for (Clan clan : clans) {
             MsgUtils.msg(sender, clan.getBasicInfo());
         }
     }
-    
-    
-    
+
 }
