@@ -23,6 +23,10 @@
  */
 package pl.chormon.ultimateclans.commands;
 
+import pl.chormon.ultimateclans.Role;
+import pl.chormon.ultimateclans.commands.req.ReqHasClan;
+import pl.chormon.ultimateclans.commands.req.ReqRoleAtLeast;
+
 /**
  *
  * @author Chormon
@@ -33,6 +37,9 @@ public class CmdDisband extends UCCommand {
         this.addAlias("rozwiaz");
 
         this.setDesc("Rozwiąż wioskę");
+        
+        this.addReq(new ReqHasClan());
+        this.addReq(new ReqRoleAtLeast(Role.LEADER));
     }
 
     @Override

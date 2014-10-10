@@ -23,6 +23,10 @@
  */
 package pl.chormon.ultimateclans.commands;
 
+import pl.chormon.ultimateclans.Role;
+import pl.chormon.ultimateclans.commands.req.ReqHasClan;
+import pl.chormon.ultimateclans.commands.req.ReqRoleAtLeast;
+
 /**
  *
  * @author Chormon
@@ -35,6 +39,9 @@ public class CmdInvite extends UCCommand {
         this.setDesc("Zaproś/usuń zaproszenia gracza do wioski");
 
         this.addArg("gracz");
+        
+        this.addReq(new ReqHasClan());
+        this.addReq(new ReqRoleAtLeast(Role.MODERATOR));
     }
 
     @Override

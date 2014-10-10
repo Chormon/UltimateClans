@@ -26,6 +26,8 @@ package pl.chormon.ultimateclans.commands;
 import java.util.List;
 import org.bukkit.entity.Player;
 import pl.chormon.ultimateclans.UltimateClans;
+import pl.chormon.ultimateclans.commands.req.ReqHasntClan;
+import pl.chormon.ultimateclans.commands.req.ReqIsPlayer;
 import pl.chormon.ultimateclans.entity.Clan;
 import pl.chormon.ultimateclans.entity.UCPlayer;
 import pl.chormon.ultimatelib.utils.MsgUtils;
@@ -47,14 +49,17 @@ public class CmdCreate extends UCCommand {
         this.addArg("nazwa");
 
         this.setErrorOnToManyArgs(false);
+        
+        this.addReq(new ReqIsPlayer());
+        this.addReq(new ReqHasntClan());
     }
 
     @Override
     public void perform() {
-        if (senderIsConsole) {
-            MsgUtils.msg(sender, "&cMusisz być graczem, żeby wykonać tą komendę!");
-            return;
-        }
+//        if (senderIsConsole) {
+//            MsgUtils.msg(sender, "&cMusisz być graczem, żeby wykonać tą komendę!");
+//            return;
+//        }
         String tag = args.get(0);
         args.remove(0);
         String name = StringUtils.implode(args, " ");

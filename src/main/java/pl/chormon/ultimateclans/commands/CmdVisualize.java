@@ -27,6 +27,8 @@ import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import pl.chormon.ultimateclans.Config;
+import pl.chormon.ultimateclans.commands.req.ReqHasntClan;
+import pl.chormon.ultimateclans.commands.req.ReqIsPlayer;
 import pl.chormon.ultimateclans.entity.UCPlayer;
 import pl.chormon.ultimateclans.utils.VisUtil;
 import pl.chormon.ultimatelib.utils.MsgUtils;
@@ -44,14 +46,13 @@ public class CmdVisualize extends UCCommand {
         this.addAlias("vis");
 
         this.setDesc("");
+        
+        this.addReq(new ReqHasntClan());
+        this.addReq(new ReqIsPlayer());
     }
 
     @Override
     public void perform() {
-        if (senderIsConsole) {
-            MsgUtils.msg(sender, "&cMusisz być graczem, żeby wykonać tą komendę!");
-            return;
-        }
         Player player = (Player) sender;
         UCPlayer ucp = UCPlayer.getPlayer(player);
         if (ucp != null && ucp.getClan() != null) {

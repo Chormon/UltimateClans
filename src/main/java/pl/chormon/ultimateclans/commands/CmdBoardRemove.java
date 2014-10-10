@@ -23,6 +23,10 @@
  */
 package pl.chormon.ultimateclans.commands;
 
+import pl.chormon.ultimateclans.Role;
+import pl.chormon.ultimateclans.commands.req.ReqHasClan;
+import pl.chormon.ultimateclans.commands.req.ReqRoleAtLeast;
+
 /**
  *
  * @author Chormon
@@ -31,6 +35,14 @@ public class CmdBoardRemove extends UCCommand {
 
     public CmdBoardRemove() {
         this.addAlias("usun");
+        
+        this.addReq(new ReqHasClan());
+        this.addReq(new ReqRoleAtLeast(Role.MODERATOR));
+    }
+
+    @Override
+    public void perform() {
+
     }
     
 }

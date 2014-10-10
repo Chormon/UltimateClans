@@ -23,6 +23,10 @@
  */
 package pl.chormon.ultimateclans.commands;
 
+import pl.chormon.ultimateclans.Role;
+import pl.chormon.ultimateclans.commands.req.ReqHasClan;
+import pl.chormon.ultimateclans.commands.req.ReqRoleAtLeast;
+
 /**
  *
  * @author Chormon
@@ -31,6 +35,18 @@ public class CmdLeader extends UCCommand {
     
     public CmdLeader() {
         this.addAlias("lider");
+        
+        this.setDesc("");
+        
+        this.addArg("gracz");
+        
+        this.addReq(new ReqHasClan());
+        this.addReq(new ReqRoleAtLeast(Role.LEADER));
+    }
+    
+    @Override
+    public void perform() {
+        
     }
     
 }

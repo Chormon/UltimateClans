@@ -24,7 +24,7 @@
 package pl.chormon.ultimateclans.commands;
 
 import pl.chormon.ultimateclans.Perm;
-import pl.chormon.ultimatelib.commands.req.ReqIsPerm;
+import pl.chormon.ultimatelib.commands.req.ReqHasPerm;
 
 /**
  *
@@ -49,7 +49,7 @@ public class CmdUC extends UCCommand {
 
         this.setDesc("Komendy pluginu UltimateClans");
         
-        this.addReq(new ReqIsPerm(Perm.UC.node));
+        this.addReq(new ReqHasPerm(Perm.UC.node));
         
         this.addSubCommand(cmdList);
         this.addSubCommand(cmdCreate);

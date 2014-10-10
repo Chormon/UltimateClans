@@ -23,6 +23,10 @@
  */
 package pl.chormon.ultimateclans.commands;
 
+import pl.chormon.ultimateclans.Role;
+import pl.chormon.ultimateclans.commands.req.ReqHasClan;
+import pl.chormon.ultimateclans.commands.req.ReqRoleAtLeast;
+
 /**
  *
  * @author Chormon
@@ -31,10 +35,18 @@ public class CmdEnemy extends UCCommand {
 
     public CmdEnemy() {
         this.addAlias("wrog");
-        
+
         this.addArg("wioska");
-        
+
         this.setDesc("");
+        
+        this.addReq(new ReqHasClan());
+        this.addReq(new ReqRoleAtLeast(Role.MODERATOR));
     }
-    
+
+    @Override
+    public void perform() {
+
+    }
+
 }

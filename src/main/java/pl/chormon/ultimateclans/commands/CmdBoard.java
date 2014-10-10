@@ -24,6 +24,7 @@
 package pl.chormon.ultimateclans.commands;
 
 import org.bukkit.entity.Player;
+import pl.chormon.ultimateclans.commands.req.ReqHasClan;
 import pl.chormon.ultimateclans.entity.Clan;
 import pl.chormon.ultimateclans.entity.UCPlayer;
 import pl.chormon.ultimatelib.utils.MsgUtils;
@@ -42,6 +43,8 @@ public class CmdBoard extends UCCommand {
 
         this.addSubCommand(cmdBoardAdd);
         this.addSubCommand(cmdBoardRemove);
+        
+        this.addReq(new ReqHasClan());
     }
 
     @Override

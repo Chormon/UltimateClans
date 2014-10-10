@@ -29,9 +29,12 @@ import java.util.TreeSet;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import pl.chormon.ultimateclans.Perm;
+import pl.chormon.ultimateclans.Role;
+import pl.chormon.ultimateclans.commands.req.ReqHasClan;
+import pl.chormon.ultimateclans.commands.req.ReqRoleAtLeast;
 import pl.chormon.ultimateclans.entity.Clan;
 import pl.chormon.ultimateclans.entity.UCPlayer;
-import pl.chormon.ultimatelib.commands.req.ReqIsPerm;
+import pl.chormon.ultimatelib.commands.req.ReqHasPerm;
 import pl.chormon.ultimatelib.utils.MsgUtils;
 
 /**
@@ -47,7 +50,9 @@ public class CmdPlayers extends UCCommand {
 
         this.addOptionalArg("wioska", "twoja");
 
-        this.addReq(new ReqIsPerm(Perm.PLAYERS.node));
+        this.addReq(new ReqHasPerm(Perm.PLAYERS.node));
+        this.addReq(new ReqHasClan());
+        this.addReq(new ReqRoleAtLeast(Role.MODERATOR));
     }
 
     @Override

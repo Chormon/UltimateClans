@@ -26,6 +26,7 @@ package pl.chormon.ultimateclans.commands;
 import java.util.List;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import pl.chormon.ultimateclans.commands.req.ReqHasClan;
 import pl.chormon.ultimateclans.entity.Clan;
 import pl.chormon.ultimateclans.entity.UCPlayer;
 import pl.chormon.ultimatelib.utils.StringUtils;
@@ -44,6 +45,8 @@ public class CmdTell extends UCCommand {
         this.addArg("wiadomość");
         
         this.setErrorOnToManyArgs(false);
+        
+        this.addReq(new ReqHasClan());
     }
 
     @Override
