@@ -31,7 +31,7 @@ import pl.chormon.ultimatelib.utils.MsgUtils;
  *
  * @author Chormon
  */
-public class UCCommand extends UltimateCommand {
+public abstract class UCCommand extends UltimateCommand {
 
     protected void noClan(CommandSender sender) {
         MsgUtils.msg(sender, "&4Nie jesteś w żadnej wiosce!");
