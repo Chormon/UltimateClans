@@ -31,7 +31,7 @@ public enum Role {
 
     LEADER(0, "L"),
     MODERATOR(1, "M"),
-    MEMBER(2, "C");
+    MEMBER(2, "");
 
     private final int id;
     private final String prefix;
@@ -47,5 +47,9 @@ public enum Role {
 
     public String prefix() {
         return prefix;
+    }
+
+    public boolean isAtLeast(Role role) {
+        return this.id <= role.id;
     }
 }
